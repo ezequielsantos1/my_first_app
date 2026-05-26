@@ -94,8 +94,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
               FloatingActionButton(
                 onPressed: _resetCounter,
-                tooltip: 'zerar',
-                child: const Icon(Icons.ac_unit),)
+                tooltip: 'resetar',
+                child: const Icon(Icons.refresh),)
         ],
       ),
     );
