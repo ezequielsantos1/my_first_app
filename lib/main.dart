@@ -34,12 +34,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
+    });
+  }
+
+   void _decrementCounter() {
+    setState(() {
+      _counter--;
     });
   }
 
@@ -80,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: .center,
           children: [
-            const Text('You have pushed the button this many times:'),
+            const Text('Você apertou essa quantidade de vezes no botão'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
@@ -88,10 +89,21 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: _incrementCounter,
+            tooltip: 'incremento',
+            child: const Icon(Icons.add),),
+
+          const SizedBox(width: 10),
+
+            FloatingActionButton(
+              onPressed: _decrementCounter,
+              tooltip: 'decremento',
+              child: const Icon(Icons.remove),)
+        ],
       ),
     );
   }
